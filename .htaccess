@@ -1,0 +1,33 @@
+# ===== Canonical e HTTPS =====
+RewriteEngine On
+
+# Força HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Força sem www (usa apenas vivare.care)
+RewriteCond %{HTTP_HOST} ^www\.vivare\.care$ [NC]
+RewriteRule ^ https://vivare.care%{REQUEST_URI} [L,R=301]
+
+# ===== Compressão (gzip) =====
+AddOutputFilterByType DEFLATE text/plain text/html text/css text/xml application/javascript application/json image/svg+xml
+
+# ===== Cache estático =====
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 30 days"
+  ExpiresByType application/javascript "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 60 days"
+  ExpiresByType image/png "access plus 60 days"
+  ExpiresByType image/svg+xml "access plus 60 days"
+  ExpiresDefault "access plus 7 days"
+</IfModule>
+
+# ===== Cabeçalhos de segurança básicos =====
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), camera=(), microphone=()"
+  Header always set Content-Security-Policy "upgrade-insecure-requests"
+</IfModule>
