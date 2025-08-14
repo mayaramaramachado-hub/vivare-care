@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vivare Care | Assistência domiciliar humanizada no RJ</title>
+  <meta name="description" content="Assistência domiciliar e hospitalar humanizada para idosos, crianças e pessoas com necessidades especiais no Rio de Janeiro. Cuidadores, técnicos, fisioterapia e nutrição. Cuidado em cada detalhe." />
+  <meta name="theme-color" content="#0F2D7A" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --royal:#0F2D7A; /* azul royal */
+      --gold:#CBA135;  /* dourado */
+      --off:#F8F6F1;  /* off-white */
+      --beige:#EDE5D9;/* bege claro */
+      --ink:#0F1828;  /* texto principal */
+      --muted:#6B7280;/* texto secundário */
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--off);color:var(--ink);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1120px,92vw);margin-inline:auto}
+    .btn{display:inline-block;padding:.9rem 1.2rem;border-radius:14px;font-weight:600;border:1px solid transparent;transition:.2s ease;}
+    .btn-primary{background:var(--royal);color:#fff}
+    .btn-primary:hover{filter:brightness(1.08)}
+    .btn-outline{border-color:var(--royal);color:var(--royal);background:#fff}
+    .btn-outline:hover{background:var(--beige)}
+    header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e8e6e0;z-index:50}
+    header .top{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--royal),#1a469e);position:relative}
+    .logo:after{content:"";position:absolute;inset:8px;border-radius:8px;border:2px solid var(--gold)}
+    .brand h1{font-family:"Playfair Display",serif;font-weight:700;font-size:1.25rem;margin:0;letter-spacing:.2px}
+    nav{display:flex;gap:22px;align-items:center}
+    nav a{font-weight:500;color:#1f2a44}
+    .hero{background:linear-gradient(180deg,#fff, var(--off));}
+    .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center;padding:56px 0}
+    .hero h2{font-family:"Playfair Display",serif;font-size:2.4rem;line-height:1.15;margin:0 0 12px}
+    .hero p{color:#334155;font-size:1.07rem;margin:0 0 20px}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:var(--beige);border:1px solid #e6dfd2;color:#6b5b3a;font-weight:600;font-size:.9rem}
+    .grid{display:grid;gap:20px}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-4{grid-template-columns:repeat(4,1fr)}
+    .card{background:#fff;border:1px solid #ece9e2;border-radius:18px;padding:20px}
+    .card h3{margin:10px 0 6px;font-size:1.05rem}
+    .card p{margin:0;color:var(--muted);font-size:.98rem}
+    .section{padding:48px 0}
+    .section h2{font-family:"Playfair Display",serif;font-size:1.9rem;margin:0 0 8px}
+    .section p.lead{color:#475569;margin:0 0 18px}
+    .steps{counter-reset:step}
+    .step{display:flex;gap:16px;align-items:flex-start}
+    .step .n{counter-increment:step;background:var(--royal);color:#fff;min-width:36px;height:36px;border-radius:10px;display:grid;place-content:center;font-weight:700}
+    .cta-band{background:linear-gradient(90deg,var(--royal),#1a469e);color:#fff;border-radius:18px;padding:26px}
+    .cta-band h3{margin:0 0 8px;font-size:1.3rem}
+    .cta-band p{margin:0 0 14px;color:#e7ecff}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    form{display:grid;gap:12px}
+    input,textarea,select{width:100%;padding:12px 14px;border:1px solid #e8e6e0;border-radius:12px;background:#fff;font:inherit}
+    textarea{min-height:120px}
+    footer{background:#0b1c46;color:#c7d2fe;margin-top:36px}
+    footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;padding:36px 0}
+    footer a{color:#c7d2fe}
+    .subfooter{border-top:1px solid rgba(255,255,255,.12);padding:12px 0;color:#95a2ff}
+    .tag{display:inline-block;padding:6px 10px;background:#fff;border-radius:999px;border:1px solid #ece9e2;font-weight:600}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;border:1px solid #e8e6e0;background:#fff}
+    .hidden{display:none}
+    @media (max-width:940px){
+      nav{display:none}
+      .hero .wrap{grid-template-columns:1fr}
+      .grid-3,.grid-4{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+      footer .cols{grid-template-columns:1fr}
+    }
+  </style>
+  <!-- Google Tag Manager (substitua GTM-XXXXXXX) -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TWGG8573');</script>
+  <!-- End GTM -->
+</head>
+<body>
+  <!-- GTM (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TWGG8573" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header>
+    <div class="container top">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>Vivare<span style="color:var(--gold)">.care</span></h1>
+      </div>
+      <nav>
+        <a href="#servicos">Serviços</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#cobertura">Áreas atendidas</a>
+        <a href="#contato">Contato</a>
+        <a href="#trabalhe" class="pill"><span>Trabalhe Conosco</span></a>
+        <a href="https://www.instagram.com/vivarecare" target="_blank" rel="noopener" class="pill">Instagram</a>
+      </nav>
+      <div style="display:flex;gap:10px;align-items:center">
+        <a class="btn btn-outline" href="tel:+5521991256319">Ligar: (21) 99125-6319</a>
+        <a class="btn btn-primary" href="https://wa.me/5521991256319?text=Oi%20Vivare!%20Preciso%20de%20assist%C3%AAncia%20domiciliar" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container wrap">
+      <div>
+        <span class="badge">Cuidado em Cada Detalhe</span>
+        <h2>Assistência domiciliar humanizada no RJ — com cuidadores, técnicos, fisioterapia e nutrição</h2>
+        <p>Atendimento domiciliar e hospitalar para <strong>idosos</strong>, <strong>crianças</strong>, pessoas com <strong>necessidades especiais</strong>, <strong>dependentes químicos</strong> e <strong>pacientes psiquiátricos</strong>. Equipe qualificada, seleção rigorosa e acompanhamento contínuo.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn btn-primary" href="#contato">Quero um orçamento</a>
+          <a class="btn btn-outline" href="#servicos">Ver serviços</a>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;color:#475569">
+          <span class="tag">Atuação: Rio e Região Metropolitana</span>
+          <span class="tag">Rápida triagem e substituição</span>
+          <span class="tag">Plantões 6h, 12h e 24h</span>
+        </div>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d01fdf?q=80&w=1400&auto=format&fit=crop" alt="Cuidadora sorrindo ao lado de idosa em casa" loading="lazy" style="border-radius:20px;border:1px solid #e8e6e0">
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="servicos">
+    <div class="container">
+      <h2>Serviços</h2>
+      <p class="lead">Planos sob medida, com início rápido e alinhados ao plano terapêutico da família e do médico.</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Assistência Domiciliar</h3>
+          <p>Cuidador(a) e técnico(a) de enfermagem para higiene, alimentação, medicação, mobilidade e prevenção de quedas.</p>
+        </div>
+        <div class="card">
+          <h3>Acompanhamento Hospitalar</h3>
+          <p>Presença contínua em hospital para segurança, conforto e apoio à família, em plantões diurnos ou noturnos.</p>
+        </div>
+        <div class="card">
+          <h3>Infantil e Pessoas com TEA</h3>
+          <p>Cuidado sensível à rotina da criança, com estímulos adequados, supervisão e apoio às terapias.</p>
+        </div>
+        <div class="card">
+          <h3>Necessidades Especiais</h3>
+          <p>Planos específicos para limitações motoras/cognitivas, com foco em autonomia e qualidade de vida.</p>
+        </div>
+        <div class="card">
+          <h3>Dependência Química</h3>
+          <p>Equipe treinada para manejo de rotina, adesão terapêutica e prevenção de recaídas, junto à família.</p>
+        </div>
+        <div class="card">
+          <h3>Saúde Mental</h3>
+          <p>Apoio a pacientes psiquiátricos, com ambiente estruturado, monitoramento e cuidado empático.</p>
+        </div>
+        <div class="card">
+          <h3>Fisioterapia Domiciliar</h3>
+          <p>Reabilitação, prevenção de quedas, fortalecimento e manutenção funcional no conforto do lar.</p>
+        </div>
+        <div class="card">
+          <h3>Nutrição Domiciliar</h3>
+          <p>Planos alimentares personalizados, orientações práticas e acompanhamento da evolução.</p>
+        </div>
+        <div class="card">
+          <h3>Plantões Flexíveis</h3>
+          <p>6h • 12h • 24h • Coberturas emergenciais e banco de talentos para substituições rápidas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="como-funciona">
+    <div class="container">
+      <h2>Como funciona</h2>
+      <div class="grid grid-3 steps">
+        <div class="card step">
+          <div class="n">1</div>
+          <div>
+            <h3>Triagem em até 1h</h3>
+            <p>Coletamos necessidades, rotina, riscos e preferências. Definimos perfil ideal do(a) profissional.</p>
+          </div>
+        </div>
+        <div class="card step">
+          <div class="n">2</div>
+          <div>
+            <h3>Seleção e apresentação</h3>
+            <p>Profissionais validados, com referências e documentação checada. Envio de opções alinhadas ao caso.</p>
+          </div>
+        </div>
+        <div class="card step">
+          <div class="n">3</div>
+          <div>
+            <h3>Início e acompanhamento</h3>
+            <p>Checklist de início, canais de contato e reavaliação periódica. Substituição rápida quando necessário.</p>
+          </div>
+        </div>
+      </div>
+      <div class="cta-band" style="margin-top:18px">
+        <h3>Precisa começar hoje?</h3>
+        <p>Fale no WhatsApp que priorizamos sua triagem e buscamos cobertura emergencial no nosso banco de talentos.</p>
+        <a class="btn btn-outline" href="https://wa.me/5521991256319?text=Oi%20Vivare!%20Preciso%20de%20atendimento%20hoje" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="cobertura">
+    <div class="container">
+      <h2>Áreas atendidas</h2>
+      <p class="lead">Rio de Janeiro e região metropolitana. Consulte disponibilidade para sua localidade.</p>
+      <div class="card" style="padding:0;overflow:hidden">
+        <img src="https://images.unsplash.com/photo-1544989164-31dc3c645987?q=80&w=1600&auto=format&fit=crop" alt="Vista aérea do Rio de Janeiro" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="provas">
+    <div class="container">
+      <h2>Por que a Vivare?</h2>
+      <div class="grid grid-4">
+        <div class="card"><h3>Humanização</h3><p>Cuidado atento, respeitoso e alinhado aos valores da família.</p></div>
+        <div class="card"><h3>Rigor na Seleção</h3><p>Documentos, experiências e referências, tudo checado.</p></div>
+        <div class="card"><h3>Acompanhamento</h3><p>Canal direto, reavaliações e plano ajustado conforme evolução.</p></div>
+        <div class="card"><h3>Rapidez</h3><p>Agilidade para iniciar e substituir, sem perder qualidade.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container">
+      <h2>Dúvidas frequentes</h2>
+      <div class="grid">
+        <div class="card"><h3>Quais plantões vocês oferecem?</h3><p>6h, 12h e 24h. Montamos escalas sob medida e fazemos coberturas emergenciais.</p></div>
+        <div class="card"><h3>Atendem plano de saúde?</h3><p>Trabalhamos via contratação particular. Emitimos nota quando aplicável.</p></div>
+        <div class="card"><h3>Como é feita a substituição?</h3><p>Temos banco de talentos para substituir com agilidade, mantendo o perfil alinhado.</p></div>
+        <div class="card"><h3>Há contrato?</h3><p>Sim, com descrição do escopo, sigilo, responsabilidades e LGPD.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contato">
+    <div class="container">
+      <h2>Fale com a Vivare</h2>
+      <p class="lead">Conte sobre o caso e receba um orçamento personalizado.</p>
+      <div class="contact">
+        <form id="lead-form" action="/lead.php" method="post" onsubmit="window.dataLayer && dataLayer.push({event:'lead_submit'});">
+          <input type="hidden" name="utm_source" id="utm_source">
+          <input type="hidden" name="utm_medium" id="utm_medium">
+          <input type="hidden" name="utm_campaign" id="utm_campaign">
+          <input type="text" name="website" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label>Seu nome*
+            <input required name="nome" autocomplete="name" />
+          </label>
+          <label>Telefone/WhatsApp*
+            <input required name="telefone" inputmode="tel" autocomplete="tel" />
+          </label>
+          <label>E-mail
+            <input name="email" type="email" autocomplete="email" />
+          </label>
+          <label>Serviço de interesse*
+            <select required name="servico">
+              <option value="">Selecione</option>
+              <option>Assistência domiciliar</option>
+              <option>Acompanhamento hospitalar</option>
+              <option>Infantil / TEA</option>
+              <option>Necessidades especiais</option>
+              <option>Dependência química</option>
+              <option>Saúde mental</option>
+              <option>Fisioterapia</option>
+              <option>Nutrição</option>
+            </select>
+          </label>
+          <label>Bairro/Cidade*
+            <input required name="local" />
+          </label>
+          <label>Conte o caso
+            <textarea name="mensagem" placeholder="Rotina, horários, necessidades específicas..."></textarea>
+          </label>
+          <label style="font-size:.9rem;color:#475569"><input type="checkbox" required> Li e aceito a <a href="#privacidade">Política de Privacidade</a>.</label>
+          <button class="btn btn-primary" type="submit">Enviar pedido de orçamento</button>
+        </form>
+        <div class="card">
+          <h3>Contato direto</h3>
+          <p>WhatsApp: <a href="https://wa.me/5521991256319" target="_blank" rel="noopener">(21) 99125-6319</a></p>
+          <p>E-mail: <a href="mailto:contato@vivare.care">contato@vivare.care</a></p>
+          <p>Instagram: <a href="https://www.instagram.com/vivarecare" target="_blank" rel="noopener">@vivarecare</a></p>
+          <div style="height:16px"></div>
+          <div class="cta-band">
+            <h3>Prefere falar agora?</h3>
+            <p>Nosso time responde em poucos minutos durante horário comercial.</p>
+            <a class="btn btn-outline" href="https://wa.me/5521991256319?text=Oi%20Vivare!%20Gostaria%20de%20um%20or%C3%A7amento" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="trabalhe">
+    <div class="container">
+      <h2>Trabalhe Conosco</h2>
+      <p class="lead">Cuidadores, técnicos(as), fisioterapeutas e nutricionistas: envie seus dados para nosso banco de talentos.</p>
+      <a class="btn btn-outline" href="https://bio.vivare.care" target="_blank" rel="noopener">Formulário para Prestadores</a>
+    </div>
+  </section>
+
+  <footer id="privacidade">
+    <div class="container cols">
+      <div>
+        <div class="brand" style="margin-bottom:10px">
+          <div class="logo" aria-hidden="true"></div>
+          <h1>Vivare<span style="color:var(--gold)">.care</span></h1>
+        </div>
+        <p>Assistência domiciliar e hospitalar humanizada no Rio de Janeiro. Cuidado em cada detalhe.</p>
+        <div style="display:flex;gap:10px;margin-top:10px">
+          <a class="pill" href="tel:+5521991256319">Ligar</a>
+          <a class="pill" href="https://wa.me/5521991256319" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+      <div>
+        <h3>Institucional</h3>
+        <ul style="list-style:none;padding:0;margin:0;display:grid;gap:8px">
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#como-funciona">Como funciona</a></li>
+          <li><a href="#cobertura">Áreas atendidas</a></li>
+          <li><a href="#faq">Dúvidas frequentes</a></li>
+          <li><a href="#trabalhe">Trabalhe Conosco</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Política de Privacidade (LGPD)</h3>
+        <p style="font-size:.95rem;color:#c7d2fe">Usamos seus dados apenas para contato e orçamento. Você pode solicitar exclusão a qualquer momento pelo e-mail <a href="mailto:contato@vivare.care">contato@vivare.care</a>.</p>
+      </div>
+    </div>
+    <div class="subfooter">
+      <div class="container" style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+        <span>© <span id="year"></span> Vivare.care — Cuidado em Cada Detalhe</span>
+        <span>Rio de Janeiro • (21) 99125-6319 • <a href="mailto:contato@vivare.care" style="color:#95a2ff">contato@vivare.care</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Atualiza ano
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Captura UTMs
+    const params = new URLSearchParams(location.search);
+    ['utm_source','utm_medium','utm_campaign'].forEach(k=>{
+      const el=document.getElementById(k); if(el) el.value=params.get(k)||''
+    });
+  </script>
+
+  <!-- JSON-LD: HomeHealthCareService -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeHealthCareService",
+    "name": "Vivare.care",
+    "alternateName": "Vivare Care",
+    "slogan": "Cuidado em Cada Detalhe",
+    "url": "https://vivare.care",
+    "logo": "https://vivare.care/logo.png",
+    "image": "https://vivare.care/og.jpg",
+    "telephone": "+55 21 99125-6319",
+    "email": "contato@vivare.care",
+    "sameAs": ["https://www.instagram.com/vivarecare","https://www.facebook.com/vivarecare"],
+    "areaServed": [{"@type":"City","name":"Rio de Janeiro"},{"@type":"AdministrativeArea","name":"Região Metropolitana do Rio de Janeiro"}],
+    "availableService": ["Assistência domiciliar","Acompanhamento hospitalar","Fisioterapia domiciliar","Nutrição"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Rio de Janeiro",
+      "addressRegion": "RJ",
+      "addressCountry": "BR"
+    }
+  }
+  </script>
+</body>
+</html>

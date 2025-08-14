@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1038887384364383');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1038887384364383&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+    <link rel="icon" type="image/png" href="favicon-48x48.ico">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vivare.care - Cuidado em Cada Detalhe</title>
+  <style>
+ .diferenciais-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.card {
+  background: #11263d;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: -1rem;
+}
+
+.card h3 {
+  color: #ffc107;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: #fff;
+  font-size: 1rem;
+}
+/* ESTILO SAIDRIO */
+.saidrio-style {
+  position: relative;
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  display: flex;
+  align-items:  flex-end;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.saidrio-style:hover {
+  transform: scale(1.02);
+}
+
+.card-text {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0,0,0,0.05));
+  color: white;
+  width: 100%;
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.card-text h3 {
+  font-size: 1.4rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.card-text p {
+  font-size: 0.95rem;
+  color: #f1f1f1;
+  margin: 0;
+}
+/* Estilo VIVARE no modelo SaidRio */
+.card-vivare {
+  position: relative;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.card-vivare:hover {
+  transform: translateY(-4px);
+}
+
+.card-vivare .overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+ background: linear-gradient(to bottom, transparent 40%, rgba(0, 0, 0, 0.85) 100%);
+  color: #fff;
+}
+
+.card-vivare h3 {
+  font-size: 1.2rem;
+  color: #ffc107;
+  margin-bottom: 0.5rem;
+}
+
+.card-vivare p {
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+
+  .logo-top {
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: -2rem; /* ajusta pra não criar espaço extra */
+}
+
+.logo-top img {
+  max-width: 220px;
+  height: auto;
+  filter: drop-shadow(0 0 6px rgba(0,0,0,0.4));
+}
+  .servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 2rem;
+  justify-items: center; 
+  margin-top: 2rem;
+}
+.servicos h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #ffc107;
+  margin-bottom: 1rem;
+  text-transform: uppercase
+}
+
+
+.servico img {
+  width: 250px;
+  height: 250px;
+  margin-bottom: -5rem;
+  object-fit: contain;
+}
+
+.servico {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.servico p {
+  margin: 0;
+  font-size: 1rem;
+  color: white;
+}
+
+    body  {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0e1a2b;
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+background: linear-gradient(rgba(0, 21, 41, 0.25), rgba(0, 21, 41, 0.25)), url('hero-vivare-final.jpg') no-repeat center center/cover;
+  padding: 5rem 2rem;
+  text-align: center;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem; {
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  backdrop-filter: brightness(1.05);
+}
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem; {
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  backdrop-filter: brightness(1.05);
+}
+    }
+    .btn {
+      display: inline-block;
+      background-color: #00b383;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      margin: 0.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid white;
+    }
+    .section {
+      padding: 3rem 2rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .section h2 {
+      color: #ffc107;
+      margin-bottom: 1rem;
+    }
+    .icon-list li::before {
+      content: "\2022";
+      color: #ffc107;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    .depoimento {
+  background: #11263d;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.depoimento img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ffc107;
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
+    footer {
+      background: #001528;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    footer a {
+      color: #ffc107;
+      text-decoration: none;
+    }
+    .servicos-container {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #ffc107;
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  margin: 3rem auto;
+  width: 95%;
+  max-width: 1200px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .servicos-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .depoimento {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .depoimento img {
+    margin-bottom: 1rem;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .logo-top img {
+    max-width: 140px;
+  }
+
+  .servicos-container {
+    margin: 2rem 1rem;
+    padding: 2rem 1.5rem;
+  }
+}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-bottom: -4rem;">
+  <img src="logovivare.png" alt="Vivare Logo" style="height: 250px;" />
+</div>
+    <h1>Cuidado em Cada Detalhe</h1>
+    <p>Toda família precisa de apoio, você não está sozinho. A Vivare está aqui para cuidar de quem você ama. </p>
+    <a class="btn" href="https://wa.me/5521991256319" target="_blank">Agendar Atendimento via WhatsApp</a>
+<a href="mailto:contato@vivare.care" class="btn btn-outline">
+  Enviar Currículo
+</a>
+  </header>
+  <section class="section">
+    <h2>Sobre a Vivare</h2>
+    <p>A Vivare.care nasceu do desejo de oferecer um cuidado mais humano, mais presente e mais atento às necessidades reais de cada paciente. Atuamos com ética, empatia e excelência, oferecendo profissionais capacitados para cuidar de idosos, crianças, pessoas com necessidades especiais, dependentes químicos e pacientes psiquiátricos — em casa ou no hospital.</p>
+  </section>
+  <section class="section">
+  <h2 style="text-align: center; color: #ffc107;">Diferenciais Vivare</h2>
+ 
+ <div class="diferenciais-grid">
+
+  <div class="card-vivare" style="background-image: url('icons/humanizado.png');">
+    <div class="overlay">
+      <h3>Atendimento Humanizado 24h</h3>
+      <p>Disponibilidade total para atender às necessidades dos pacientes e familiares.</p>
+    </div>
+  </div>
+
+  <div class="card-vivare" style="background-image: url('icons/gerontologia.png');">
+    <div class="overlay">
+      <h3>Supervisão com Especialista</h3>
+      <p>Acompanhamento mensal por profissional especializado em cuidados com idosos.</p>
+    </div>
+  </div>
+
+  <div class="card-vivare" style="background-image: url('icons/atividades.png');">
+    <div class="overlay">
+      <h3>Estímulos Cognitivos</h3>
+      <p>Jogos de memória e atividades adaptadas às condições de cada paciente.</p>
+    </div>
+  </div>
+
+  <div class="card-vivare" style="background-image: url('icons/equipe.png');">
+    <div class="overlay">
+      <h3>Equipe Multidisciplinar</h3>
+      <p>Profissionais de diversas áreas trabalhando juntos para um cuidado integral.</p>
+    </div>
+  </div>
+
+  <div class="card-vivare" style="background-image: url('icons/monitoramento.png');">
+    <div class="overlay">
+      <h3>Monitoramento Remoto</h3>
+      <p>Em testes: tecnologia para acompanhar pacientes à distância com relatórios periódicos.</p>
+    </div>
+  </div>
+
+  <div class="card-vivare" style="background-image: url('icons/suporte.png');">
+    <div class="overlay">
+      <h3>Suporte via WhatsApp</h3>
+      <p>Canal direto com nossa equipe para dúvidas, emergências e orientações.</p>
+    </div>
+  </div>
+
+</div>
+
+</section>
+
+  </section>
+<div class="servicos-container">
+  <section class="section servicos">
+  <h2>Nossos Serviços</h2>
+  <div class="servicos-grid">
+    <div class="servico">
+      <img src="icons/domiciliar.png" alt="Assistência domiciliar" />
+      <p>Assistência domiciliar</p>
+    </div>
+    <div class="servico">
+      <img src="icons/hospitalar.png" alt="Assistência hospitalar" />
+      <p>Assistência hospitalar</p>
+    </div>
+    <div class="servico">
+      <img src="icons/idoso.png" alt="Acompanhamento de idosos" />
+      <p>Acompanhamento de idosos</p>
+    </div>
+    <div class="servico">
+      <img src="icons/infantil.png" alt="Acompanhamento infantil" />
+      <p>Acompanhamento infantil</p>
+    </div>
+    <div class="servico">
+      <img src="icons/fisioterapia.png" alt="Fisioterapia" />
+      <p>Fisioterapia</p>
+    </div>
+    <div class="servico">
+      <img src="icons/nutricao.png" alt="Nutrição" />
+      <p>Nutrição</p>
+    </div>
+  </div>
+</section>
+</div>
+<section class="section destaque-familia" style="background-color: #16385e; padding: 3rem 2rem; text-align: center;">
+  <h2 style="color: #ffffff; margin-bottom: 1rem;">Pensando em Você</h2>
+  <p style="font-size: 1.2rem; max-width: 700px; margin: auto; color: #ffffff;">
+    Atendimento personalizado, para melhor qualidade de vida. Cuidando com carinho e dedicação em toda fase da vida!
+  </p>
+</section>
+  <section class="section">
+    <h2>Depoimentos Reais</h2>
+    <div class="depoimento">
+      <img src="cliente1.jpg" alt="Dra Graciela R.">
+      <div>
+        <strong>Dra Graciela R. – Filha de paciente</strong>
+        <p>“Tivemos experiências ruins com outras empresas, até encontrar a Vivare. Foram atenciosos desde o primeiro contato.”</p>
+      </div>
+    </div>
+    <div class="depoimento">
+      <img src="cliente2.jpg" alt="Rodrigo C.">
+      <div>
+        <strong>Rodrigo C. – Genro </strong>
+        <p>“Todos os cuidadores foram muito profissionais e atenciosos... toda a família respira mais tranquila.”</p>
+      </div>
+    </div>
+    <div class="depoimento">
+      <img src="cliente3.jpg" alt="Carlos A.">
+      <div>
+        <strong>Carlos A. – Filho </strong>
+        <p> “Quando mais precisamos, a Vivare nos deu todo suporte e fez toda diferença. Gratidão eterna.”</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Regiões Atendidas</h2>
+    <p>Atendemos em todo o Rio de Janeiro e região metropolitana. Entre em contato para consultar disponibilidade na sua área.</p>
+  </section>
+
+  <footer>
+    <p>📞 WhatsApp: <a href="https://wa.me/5521991256319">21 99125-6319</a> | ✉️ E-mail: <a href="mailto:contato@vivare.care">contato@vivare.care</a></p>
+  <p>
+    <a href="https://instagram.com/vivarecare" target="_blank" style="color: #ffc107; text-decoration: none;">📸 Instagram</a> |
+    <a href="https://facebook.com/vivarecare" target="_blank" style="color: #ffc107; text-decoration: none;">📘 Facebook</a>
+  </p>
+    <p><a href="https://vivare.care">Visitar Site Institucional</a></p>
+    <p>Vivare.care – Cuidado em Cada Detalhe</p>
+  <p style="font-size: 0.8rem; color: #aaa;">© 2025 Vivare.care – Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
+
